@@ -1,0 +1,53 @@
+<%= form_for(@scratchoff) do |f| %>
+  <% if @scratchoff.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@scratchoff.errors.count, "error") %> prohibited this scratchoff from being saved:</h2>
+
+      <ul>
+      <% @scratchoff.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :gameNumber %><br />
+    <%= f.number_field :gameNumber %>
+  </div>
+  <div class="field">
+    <%= f.label :scratchoffs_id %><br />
+    <%= f.number_field :scratchoffs_id %>
+  </div>
+  <div class="field">
+    <%= f.label :closeDate %><br />
+    <%= f.date_select :closeDate %>
+  </div>
+  <div class="field">
+    <%= f.label :ticketPrice %><br />
+    <%= f.number_field :ticketPrice %>
+  </div>
+  <div class="field">
+    <%= f.label :prizeLevel %><br />
+    <%= f.text_field :prizeLevel %>
+  </div>
+  <div class="field">
+    <%= f.label :prizeTotal %><br />
+    <%= f.number_field :prizeTotal %>
+  </div>
+  <div class="field">
+    <%= f.label :prizeClaimed %><br />
+    <%= f.number_field :prizeClaimed %>
+  </div>
+  <div class="field">
+    <%= f.label :origOdds %><br />
+    <%= f.number_field :origOdds %>
+  </div>
+  <div class="field">
+    <%= f.label :currOdds %><br />
+    <%= f.number_field :currOdds %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

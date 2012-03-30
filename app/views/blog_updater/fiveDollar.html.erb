@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
+  </head>
+  <body>:start
+    <p align="left"> Do you use and enjoy our site? Show us your support by signing up with your email using the form on the right.  The more support we get the more, the more stats we will develop!<img align="right" src="http://www.alottostats.com/images/green-arrow.jpg" HEIGHT="40" WIDTH="40"><p align="right"><strong> Psst - it's in the sidebar...over there </strong></p>
+
+    <p>Fill out the form below to signup for daily updates on the latest stats for $5 Texas Lottery Scratch-offs:</p>
+    <p><form style="border:1px solid #ccc;padding:3px;text-align:center;" action="http://feedburner.google.com/fb/a/mailverify" method="post" target="popupwindow" onsubmit="window.open('http://feedburner.google.com/fb/a/mailverify?uri=ALottoStats5Scratch-offs', 'popupwindow', 'scrollbars=yes,width=550,height=520');return true"><p>Enter your email address:</p><p><input type="text" style="width:140px" name="email"/></p><input type="hidden" value="ALottoStats5Scratch-offs" name="uri"/><input type="hidden" name="loc" value="en_US"/><input type="submit" value="Subscribe" /></form>
+
+      <!--form style="border: 1px solid #ccc; padding: 3px; text-align: center;" action="http://feedburner.google.com/fb/a/mailverify" method="post" onsubmit="window.open('http://feedburner.google.com/fb/a/mailverify?uri=ALottoStats', 'popupwindow', 'scrollbars=yes,width=550,height=520');return true" target="popupwindow">Enter your email address:<input style="width: 140px;" type="text" name="email" /> <input type="hidden" name="uri" value="ALottoStats" /> <input type="hidden" name="loc" value="en_US" /> <input type="submit" value="Subscribe" /></form-->
+    </p>
+    <table>
+  <tr>
+    <th>Scratch-off Name</th>
+    <th>Scratch-off Price</th>
+    <th>Original Odds <br /> Any Prize</th>
+    <th><font color="Green"><strong>Current Odds <br /> Any Prize</strong></font></th>
+  </tr>
+  <% @urlsFives.each do |url| %>
+    <td><%= url.title %></td>
+    <td>$<%= url.price %></td>
+    <td>1:<%= url.origOdds %></td> 
+    <% if url.currOdds != 1 %>
+    <td><font size="+1" color="Green">1:<%= url.currOdds %></font></td> 
+    <% else %>
+    <td><font color="red">&nbsp;&nbsp;Closed!&nbsp;&nbsp;</font></td>
+    <% end %>
+    <td><a href="<%= url.url %>" target="_blank">Link</a></td>
+  </tr>
+  <% end %>
+</table>:end
+</html>

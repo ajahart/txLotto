@@ -1,0 +1,66 @@
+class BlogUpdater < ActionMailer::Base
+  default :from => "alexjonespodcasts@gmail.com"
+
+  def dailyStats()
+    @urlAlls = Url.find(:all, :conditions => ["price < 51"], :order => "currOdds")
+    @urlsOnes = Url.find(:all, :conditions => ["price = 1"], :order => "currOdds")
+  	@urlsTwos = Url.find(:all, :conditions => ["price = 2"], :order => "currOdds")
+    @urlsThrees = Url.find(:all, :conditions => ["price = 3"], :order => "currOdds")
+    @urlsFives = Url.find(:all, :conditions => ["price = 5"], :order => "currOdds")
+    @urlsSevens = Url.find(:all, :conditions => ["price = 7"], :order => "currOdds")
+    @urlsTens = Url.find(:all, :conditions => ["price = 10"], :order => "currOdds")
+    @urlsTwentyups = Url.find(:all, :conditions => ["price > 19"], :order => "currOdds")
+  	mail(:to => "alottostats032012@ajpfiles.com", :subject => "[Daily]All Texas Scratch-Offs " + Date.today.to_s(:long_ordinal))
+  end
+
+  def newTicket()
+    mail(:to => "ajalonh@gmail.com", :subject => "New Ticket Added" + Date.today.to_s(:long_ordinal))
+  end
+
+  def oneDollar()
+  	@urlsOnes = Url.find(:all, :conditions => ["price = 1"], :order => "currOdds")
+  	mail(:to => "alottostats032012@ajpfiles.com", :subject => "[$1] $1 Texas Scratch-offs " + Date.today.to_s(:long_ordinal))
+  end
+
+  def twoDollar()
+  	@urlsTwos = Url.find(:all, :conditions => ["price = 2"], :order => "currOdds")
+  	mail(:to => "alottostats032012@ajpfiles.com", :subject => "[$2] $2 Texas Scratch-offs " + Date.today.to_s(:long_ordinal))
+  end
+
+  def threeDollar()
+  	@urlsThrees = Url.find(:all, :conditions => ["price = 3"], :order => "currOdds")
+  	mail(:to => "alottostats032012@ajpfiles.com", :subject => "[$3] $3 Texas Scratch-offs " + Date.today.to_s(:long_ordinal))
+  end
+
+  def fiveDollar()
+  	@urlsFives = Url.find(:all, :conditions => ["price = 5"], :order => "currOdds")
+  	mail(:to => "alottostats032012@ajpfiles.com", :subject => "[$5] $5 Texas Scratch-offs " + Date.today.to_s(:long_ordinal))
+  end
+
+  def sevenDollar()
+  	@urlsSevens = Url.find(:all, :conditions => ["price = 7"], :order => "currOdds")
+  	mail(:to => "alottostats032012@ajpfiles.com", :subject => "[$7] $7 Texas Scratch-offs " + Date.today.to_s(:long_ordinal))
+  end
+
+  def tenDollar()
+  	@urlsTens = Url.find(:all, :conditions => ["price = 10"], :order => "currOdds")
+  	mail(:to => "alottostats032012@ajpfiles.com", :subject => "[$10] $10 Texas Scratch-offs " + Date.today.to_s(:long_ordinal))
+  end
+
+  def twentyupDollar()
+    @urlsTwentyups = Url.find(:all, :conditions => ["price > 19"], :order => "currOdds")
+  	mail(:to => "alottostats032012@ajpfiles.com", :subject => "[$20] $20+ Texas Scratch-offs " + Date.today.to_s(:long_ordinal))
+  end
+
+  def mobileStats()
+    @urlsAlls = Url.find(:all, :conditions => ["price < 51"], :order => "currOdds", :limit => 1)
+    @urlsOnes = Url.find(:all, :conditions => ["price = 1"], :order => "currOdds", :limit => 1)
+    @urlsTwos = Url.find(:all, :conditions => ["price = 2"], :order => "currOdds", :limit => 1)
+    @urlsThrees = Url.find(:all, :conditions => ["price = 3"], :order => "currOdds", :limit => 1)
+    @urlsFives = Url.find(:all, :conditions => ["price = 5"], :order => "currOdds", :limit => 1)
+    @urlsSevens = Url.find(:all, :conditions => ["price = 7"], :order => "currOdds", :limit => 1)
+    @urlsTens = Url.find(:all, :conditions => ["price = 10"], :order => "currOdds", :limit => 1)
+    @urlsTwentyups = Url.find(:all, :conditions => ["price > 19"], :order => "currOdds", :limit => 1)
+    mail(:to => "alottostats032012@ajpfiles.com", :subject => "[mob]Texas Lotto Scratch-Off Stats Updated " + Date.today.to_s(:long_ordinal))
+  end
+end

@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
+  </head>
+  <body>
+    <p> Hey Aja, </p>
+    <p> How are you today?  I hope you have a little bit of free time, because you will need to
+      get off your lazy ass and check out the following:</p>
+<% @scratchoffs.each do |scratchoff| %>
+<% if scratchoff.totalRemaining == 0  %>
+    <p><br />I have a situation, it may be legit but I would like to have your professional opinion.<br />
+      <font color="red"><%= @gameName %></font> has found that there may be zero prizes left for <font color="red"><%= scratchoff.prizeLevel %></font>.  Can you 
+      <a href="<% @link %>"><font color="red">check this out?</font></a>  </p>
+      <% end %>
+      <% end %>
+      <p>Thank you Aja,</p><br />
+      <p>Darling Lotto</p>
+    </body>
+</html>

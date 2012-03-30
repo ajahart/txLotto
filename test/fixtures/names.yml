@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  gameName: MyString
+  origOdds: 1
+  currOdds: 1
+  grandRemain: 1
+
+two:
+  gameName: MyString
+  origOdds: 1
+  currOdds: 1
+  grandRemain: 1

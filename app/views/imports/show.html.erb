@@ -1,0 +1,40 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Gamenumber:</b>
+  <%= @import.gameNumber %>
+</p>
+
+<p>
+  <b>Gamename:</b>
+  <%= @import.gameName %>
+</p>
+
+<p>
+  <b>Closedate:</b>
+  <%= @import.closeDate %>
+</p>
+
+<p>
+  <b>Ticketprice:</b>
+  <%= @import.ticketPrice %>
+</p>
+
+<p>
+  <b>Prizelevel:</b>
+  <%= @import.prizeLevel %>
+</p>
+
+<p>
+  <b>Totalprizes:</b>
+  <%= @import.totalPrizes %>
+</p>
+
+<p>
+  <b>Prizeclaimed:</b>
+  <%= @import.prizeClaimed %>
+</p>
+
+
+<%= link_to 'Edit', edit_import_path(@import) %> |
+<%= link_to 'Back', imports_path %>

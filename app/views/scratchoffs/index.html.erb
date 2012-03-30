@@ -1,0 +1,40 @@
+<h1>Listing scratchoffs</h1>
+
+<table>
+  <tr>
+    <th>Game #</th>
+    <th>PrizesID</th>
+    <th>Closing</th>
+    <th>Ticketprice</th>
+    <th>Prizelevel</th>
+    <th>Prizetotal</th>
+    <th>Prizeclaimed</th>
+    <th>Origodds</th>
+    <th>Currodds</th>
+    <th>Url</th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @scratchoffs.each do |scratchoff| %>
+  <tr>
+    <td><%= scratchoff.gameNumber %></td>
+    <td><%= scratchoff.prizes_id %></td>
+    <td><%= scratchoff.closeDate %></td>
+    <td><%= scratchoff.ticketPrice %></td>
+    <td><%= scratchoff.prizeLevel %></td>
+    <td><%= scratchoff.prizeTotal %></td>
+    <td><%= scratchoff.prizeClaimed %></td>
+    <td><%= scratchoff.origOdds %></td>
+    <td><%= scratchoff.currOdds %></td>
+    <td><%= scratchoff.url %></td>
+    <td><%= link_to 'Show', scratchoff %></td>
+    <td><%= link_to 'Edit', edit_scratchoff_path(scratchoff) %></td>
+    <td><%= link_to 'Destroy', scratchoff, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Scratchoff', new_scratchoff_path %>

@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>TxLotto</title>
+  <%= stylesheet_link_tag    "application" %>
+  <%= javascript_include_tag "application" %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+<a href="http://localhost:3000/names/updateStats"> Update Stats </a><br />
+<a href="http://localhost:3000/names/zeroGrand"> No Grand Prizes </a>
+<%= yield %>
+
+</body>
+</html>

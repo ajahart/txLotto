@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
+  </head>
+  <body>:start
+
+      <br />
+    </p>
+    <h2><font color="red">Best Texas Lotto Scratch-off By Odds</font></h2>
+    <table>
+  <tr>
+    <th>Scratch-off Name</th>
+    <th>Scratch-off Price</th>
+    <th>Original Odds <br /> Any Prize</th>
+    <th><font color="Green"><strong>Current Odds <br /> Any Prize</strong></font></th>
+  </tr>
+  <% @urlsAlls.each do |url| %>
+    <td><%= url.title %></td>
+    <td>$<%= url.price %></td>
+    <td>1:<%= url.origOdds %></td> 
+    <% if url.currOdds != 1 %>
+    <td><font size="+1" color="Green">1:<%= url.currOdds %></font></td> 
+    <% else %>
+    <td><font color="red">&nbsp;&nbsp;Closed!&nbsp;&nbsp;</font></td>
+    <% end %>
+    <td><a href="<%= url.url %>" target="_blank">Link</a></td>
+  </tr>
+  <% end %>
+</table><br /><br />
+    <h2><font color="red">Best Texas Lotto Odds By Price</font></h2>
+    <table>
+  <tr>
+    <th>Scratch-off Name</th>
+    <th>Scratch-off Price</th>
+    <th>Original Odds <br /> Any Prize</th>
+    <th><font color="Green"><strong>Current Odds <br /> Any Prize</strong></font></th>
+  </tr>
+  <% @urlsOnes.each do |url| %>
+    <td><%= url.title %></td>
+    <td>$<%= url.price %></td>
+    <td>1:<%= url.origOdds %></td> 
+    <td><font size="+1" color="Green">1:<%= url.currOdds %></font></td> 
+    <td><a href="<%= url.url %>" target="_blank">Link</a></td>
+  </tr>
+  <% end %>
+  <% @urlsTwos.each do |url| %>
+    <td><%= url.title %></td>
+    <td>$<%= url.price %></td>
+    <td>1:<%= url.origOdds %></td> 
+    <td><font size="+1" color="Green">1:<%= url.currOdds %></font></td> 
+    <td><a href="<%= url.url %>" target="_blank">Link</a></td>
+  </tr>
+  <% end %>
+    <% @urlsThrees.each do |url| %>
+    <td><%= url.title %></td>
+    <td>$<%= url.price %></td>
+    <td>1:<%= url.origOdds %></td> 
+    <td><font size="+1" color="Green">1:<%= url.currOdds %></font></td> 
+    <td><a href="<%= url.url %>" target="_blank">Link</a></td>
+  </tr>
+  <% end %>
+    <% @urlsFives.each do |url| %>
+    <td><%= url.title %></td>
+    <td>$<%= url.price %></td>
+    <td>1:<%= url.origOdds %></td> 
+    <td><font size="+1" color="Green">1:<%= url.currOdds %></font></td> 
+    <td><a href="<%= url.url %>" target="_blank">Link</a></td>
+  </tr>
+  <% end %>
+    <% @urlsSevens.each do |url| %>
+    <td><%= url.title %></td>
+    <td>$<%= url.price %></td>
+    <td>1:<%= url.origOdds %></td> 
+    <td><font size="+1" color="Green">1:<%= url.currOdds %></font></td> 
+    <td><a href="<%= url.url %>" target="_blank">Link</a></td>
+  </tr>
+  <% end %>
+    <% @urlsTens.each do |url| %>
+    <td><%= url.title %></td>
+    <td>$<%= url.price %></td>
+    <td>1:<%= url.origOdds %></td> 
+    <td><font size="+1" color="Green">1:<%= url.currOdds %></font></td> 
+    <td><a href="<%= url.url %>" target="_blank">Link</a></td>
+  </tr>
+  <% end %>
+    <% @urlsTwentyups.each do |url| %>
+    <td><%= url.title %></td>
+    <td>$<%= url.price %></td>
+    <td>1:<%= url.origOdds %></td> 
+    <td><font size="+1" color="Green">1:<%= url.currOdds %></font></td> 
+    <td><a href="<%= url.url %>" target="_blank">Link</a></td>
+  </tr>
+  <% end %>
+</table>:end
+</html>

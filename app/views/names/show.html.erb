@@ -1,0 +1,25 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Gamename:</b>
+  <%= @name.gameName %>
+</p>
+
+<p>
+  <b>Origodds:</b>
+  <%= @name.origOdds %>
+</p>
+
+<p>
+  <b>Currodds:</b>
+  <%= @name.currOdds %>
+</p>
+
+<p>
+  <b>Grandremain:</b>
+  <%= @name.grandRemain %>
+</p>
+
+
+<%= link_to 'Edit', edit_name_path(@name) %> |
+<%= link_to 'Back', names_path %>

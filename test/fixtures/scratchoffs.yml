@@ -1,0 +1,23 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  gameNumber: 1
+  scratchoffs_id: 1
+  closeDate: 2012-03-08
+  ticketPrice: 1
+  prizeLevel: MyString
+  prizeTotal: 1
+  prizeClaimed: 1
+  origOdds: 1
+  currOdds: 1
+
+two:
+  gameNumber: 1
+  scratchoffs_id: 1
+  closeDate: 2012-03-08
+  ticketPrice: 1
+  prizeLevel: MyString
+  prizeTotal: 1
+  prizeClaimed: 1
+  origOdds: 1
+  currOdds: 1

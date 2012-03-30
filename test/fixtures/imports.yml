@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  gameNumber: 1
+  gameName: MyString
+  closeDate: MyString
+  ticketPrice: 1
+  prizeLevel: MyString
+  totalPrizes: 1
+  prizeClaimed: 1
+
+two:
+  gameNumber: 1
+  gameName: MyString
+  closeDate: MyString
+  ticketPrice: 1
+  prizeLevel: MyString
+  totalPrizes: 1
+  prizeClaimed: 1

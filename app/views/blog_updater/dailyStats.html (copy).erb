@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
+  </head>
+  <body>:start
+    <font color="red"><strong>No Grand Prizes Remaining!</font>
+    <br />The following games have <font color="red">NO</font> Grand Prizes remaining!</strong>
+    <table>
+      <tr>
+        <th>Game #</th>
+        <th>Ticket<br />Price</th>
+        <th>Scratch-off Name</th>
+        <th>Odds of Winning<br />Any Prize<br />(Including Break-Even Prizes)</th>
+        <th>Original "In The Money"<br />Odds</th>
+        <th><strong>Current "<font color="Green">In The Money</font>"<br />Odds</strong></th>
+        <th>Prize Information</th>
+      </tr>
+      <% @tickets.each do |name| %>
+      <tr>
+        <td><a href="<%= name.url %>" target="_blank"><%= name.gameNumber %></a></td>
+        <td>$<%= name.price %></td>
+        <td><font color="red"><%= name.gameName %></font></td>
+        <td>1 in <%= name.origbeOdds %></td>
+        <td>1 in <%= name.origOdds %></td> 
+        <td><strong>1 in <font color="Green"><%= name.currOdds %></strong></font></td>
+        <td><strong><font color="Red"><%= name.grandRemain %></strong> Grand Prize(s) of <% if name.prizeLevel.starts_with? "$" %><% else %>$<% end %><%= name.prizeLevel %> Remaining!</font></td>
+      </tr>
+      <% end %>
+    </table>
+    ** "In The Money" means Break Even prizes are not calculated. This gives you the Odds for all prizes with greater return than money spent. **
+    <br /><br />
+     <div  class="mailer"><form> To show your support for the site and to receive the occasional update on our progress, sign up with your email using the form on the right.<img align="right" src="http://www.alottostats.com/images/green-arrow-yellow.jpg" HEIGHT="40" WIDTH="40"><p align="right"><strong> Psst - it's in the sidebar...over there </strong></form></div>
+
+    <font color="green"><strong>MOST Grand Prizes Remaining!</font>
+    <br />The following games have the <font color="green">MOST</font> Grand Prizes remaining!</strong>
+    <table>
+      <tr>
+        <th>Game #</th>
+        <th>Ticket<br />Price</th>
+        <th>Scratch-off Name</th>
+        <th>Odds of Winning<br />Any Prize<br />(Including Break-Even Prizes)</th>
+        <th>Original "In The Money"<br />Odds</th>
+        <th><strong>Current "<font color="Green">In The Money</font>"<br />Odds</strong></th>
+        <th>Prize Information</th>
+      </tr>
+      <% @grands.each do |name| %>
+      <tr>
+        <td><a href="<%= name.url %>" target="_blank"><%= name.gameNumber %></a></td>
+        <td>$<%= name.price %></td>
+        <td><font color="green"><%= name.gameName %></font></td>
+        <td>1 in <%= name.origbeOdds %></td>
+        <td>1 in <%= name.origOdds %></td> 
+        <td><strong>1 in <font color="Green"><%= name.currOdds %></strong></font></td>
+        <td><strong><%= name.grandRemain %></strong> Grand Prize(s) of <% if name.prizeLevel.starts_with? "$" %><% else %>$<% end %><%= name.prizeLevel %> Remaining!</td>
+      </tr>
+      <% end %>
+    </table>
+    <br />
+     <form action="http://feedburner.google.com/fb/a/mailverify" method="post" target="popupwindow" onsubmit="window.open('http://feedburner.google.com/fb/a/mailverify?uri=ALottoStats', 'popupwindow', 'scrollbars=yes,width=550,height=520');return true"><p>Enter your email address and hit "Subscribe" to have the best Texas Lottery Scratch-offs odds emailed to you DAILY!:</p><p><input type="text" style="width:140px" name="email"/></p><input type="hidden" value="ALottoStats" name="uri"/><input type="hidden" name="loc" value="en_US"/><input type="submit" value="Subscribe" /></form></div>
+
+    <br /><p><h1><font color="green"><strong>LARGEST</font> Grand Prizes!</h1>
+      <h3>The following games have the Biggest Grand Prizes!</strong></h3></p>
+      <table>
+        <tr>
+        <th>Game #</th>
+        <th>Ticket<br />Price</th>
+        <th>Scratch-off Name</th>
+        <th>Odds of Winning<br />Any Prize<br />(Including Break-Even Prizes)</th>
+        <th>Original "In The Money"<br />Odds</th>
+        <th><strong>Current "<font color="Green">In The Money</font>"<br />Odds</strong></th>
+        <th>Prize Information</th>
+        </tr>
+        <% @grandsize.each do |name| %>
+        <tr>
+          <td><a href="<%= name.url %>" target="_blank"><%= name.gameNumber %></a></td>
+        <td>$<%= name.price %></td>
+        <td><font color="green"><%= name.gameName %></font></td>
+        <td>1 in <%= name.origbeOdds %></td>
+        <td>1 in <%= name.origOdds %></td> 
+        <td><strong>1 in <font color="Green"><%= name.currOdds %></strong></font></td>
+        <td><strong><%= name.grandRemain %></strong> Grand Prize(s) of <% if name.prizeLevel.starts_with? "$" %><% else %>$<% end %><%= name.prizeLevel %> Remaining!</td>
+        </tr>
+        <% end %>
+      </table>
+    </p>
+    
+
+        <form action="http://feedburner.google.com/fb/a/mailverify" method="post" target="popupwindow" onsubmit="window.open('http://feedburner.google.com/fb/a/mailverify?uri=ALottoStats', 'popupwindow', 'scrollbars=yes,width=550,height=520');return true"><p>Enter your email address and hit "Subscribe" to have the best Texas Lottery Scratch-offs odds emailed to you DAILY!:</p><p><input type="text" style="width:140px" name="email"/></p><input type="hidden" value="ALottoStats" name="uri"/><input type="hidden" name="loc" value="en_US"/><input type="submit" value="Subscribe" /></form></div>
+
+    <p>
+      <h1>Top Ten Texas Scratchoffs With Best Odds of Winning 'In The Money' Prizes!</h1>
+      <h3>(Not including the 'Break Even' Prizes)</h3></p>
+    <table>
+      <tr>
+        <th>Game #</th>
+        <th>Ticket<br />Price</th>
+        <th>Scratch-off Name</th>
+        <th>Odds of Winning<br />Any Prize<br />(Including Break-Even Prizes)</th>
+        <th>Original "In The Money"<br />Odds</th>
+        <th><strong>Current "<font color="Green">In The Money</font>"<br />Odds</strong></th>
+        <th>Prize Information</th>
+      </tr>
+      <% @namesAlls.each do |name| %>
+      <tr>
+        <td><a href="<%= name.url %>" target="_blank"><%= name.gameNumber %></a></td>
+        <td>$<%= name.price %></td>
+        <td><% if name.grandRemain > 0 %><font color="green"><% else %><font color="red"><% end %><%= name.gameName %></font></td>
+        <td>1 in <%= name.origbeOdds %></td>
+        <td>1 in <%= name.origOdds %></td> 
+        <td><strong>1 in <font color="Green"><%= name.currOdds %></strong></font></td>
+        <td><strong><%= name.grandRemain %></strong> Grand Prize(s) of <% if name.prizeLevel.starts_with? "$" %><% else %>$<% end %><%= name.prizeLevel %> Remaining!</td>
+      </tr>
+      <% end %>
+    </table>:end
+</html>

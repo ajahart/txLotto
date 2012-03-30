@@ -1,0 +1,50 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Gamenumber:</b>
+  <%= @scratchoff.gameNumber %>
+</p>
+
+<p>
+  <b>Scratchoffs:</b>
+  <%= @scratchoff.scratchoffs_id %>
+</p>
+
+<p>
+  <b>Closedate:</b>
+  <%= @scratchoff.closeDate %>
+</p>
+
+<p>
+  <b>Ticketprice:</b>
+  <%= @scratchoff.ticketPrice %>
+</p>
+
+<p>
+  <b>Prizelevel:</b>
+  <%= @scratchoff.prizeLevel %>
+</p>
+
+<p>
+  <b>Prizetotal:</b>
+  <%= @scratchoff.prizeTotal %>
+</p>
+
+<p>
+  <b>Prizeclaimed:</b>
+  <%= @scratchoff.prizeClaimed %>
+</p>
+
+<p>
+  <b>Origodds:</b>
+  <%= @scratchoff.origOdds %>
+</p>
+
+<p>
+  <b>Currodds:</b>
+  <%= @scratchoff.currOdds %>
+</p>
+
+
+<%= link_to 'Edit', edit_scratchoff_path(@scratchoff) %> |
+<%= link_to 'Back', scratchoffs_path %>
